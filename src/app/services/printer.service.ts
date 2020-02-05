@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { environment  } from '../../environments/environment';
-import {Printer,PRINTER_TYPE} from '../models/Printer';
+import {Printer} from '../models/Printer';
 import EscPosEncoder from 'esc-pos-encoder-ionic';
 import {ReceiptDetail} from '../models/ReceiptDetail';
 
 import * as moment from 'moment';
+enum PRINTER_TYPE {
+  WiFi = 'WiFi printer',
+  Network = 'Network port printer'
+}
 declare var Socket: any;
 @Injectable({
   providedIn: 'root'
@@ -16,7 +20,8 @@ export class PrinterService {
   printers = [];
 
   constructor(private httpClient: HttpClient) {}
-
+  
+  
   loadPrinters(): void {
     const url = environment.SERVER_URL + '/api/printer';
 
