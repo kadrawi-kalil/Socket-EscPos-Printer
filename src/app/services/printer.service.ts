@@ -5,13 +5,13 @@ import { environment  } from '../../environments/environment';
 import {Printer} from '../models/Printer';
 import EscPosEncoder from 'esc-pos-encoder-ionic';
 import {ReceiptDetail} from '../models/ReceiptDetail';
-
+import * from 'cordova-plugin-socket-tcp';
 import * as moment from 'moment';
 enum PRINTER_TYPE {
   WiFi = 'WiFi printer',
   Network = 'Network port printer'
 }
-declare var Socket: any;
+//declare var Socket: any;
 @Injectable({
   providedIn: 'root'
 })
@@ -37,8 +37,8 @@ export class PrinterService {
 
   printQrReceipt(printer: Printer, receiptDetail: ReceiptDetail): void {
     switch (printer.printer_type) {
-      case PRINTER_TYPE.WiFi:
-      case PRINTER_TYPE.Network:
+    //  case PRINTER_TYPE.WiFi:
+      case 'ok':
         const resultByte = this.generateQrReceipt(receiptDetail);
         const socket = new Socket();
         socket.open(

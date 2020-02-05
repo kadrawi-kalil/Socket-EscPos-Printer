@@ -7,7 +7,10 @@ export class Printer  {
   
 
 
- 
+  export enum PRINTER_TYPE {
+    WiFi = '192.168.15.02',
+    Network = '9100'
+}
 
 
   

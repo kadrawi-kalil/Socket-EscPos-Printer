@@ -33,7 +33,8 @@ export class Tab1Page {
     const printer =new Printer();
     printer.port='9100';
     printer.ip_address_of_printer='192.168.40.10';
-    printer.printer_type='TCP'; 
+    printer.printer_type='ok';
+    console.log(printer)
   
     this.printerService.printQrReceipt(printer,receipt);
   }
