@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { environment  } from '../../environments/environment';
 import {Printer} from '../models/Printer';
 import EscPosEncoder from 'esc-pos-encoder-ionic';
@@ -18,9 +17,7 @@ declare var Socket: any;
 export class PrinterService {
 
   printers = [];
-
   constructor(private httpClient: HttpClient) {}
-  
   
   loadPrinters(): void {
     const url = environment.SERVER_URL + '/api/printer';

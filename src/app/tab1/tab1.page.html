@@ -13,6 +13,9 @@
         <ion-card-title>Test Printer</ion-card-title>
       </ion-card-header>
       <ion-card-content>
+        <input type="text" placeholder="192.168.10.5"  [(ngModel)]='ip_address_printer' required>
+        <input type="text" placeholder="9100" [(ngModel)]='port_printer' required>
+        <input type="text" placeholder="MY RESTO TICKET" [(ngModel)]='title_to_print'required>
         <ion-button (click) = "test()">Print</ion-button>
         <p>click button to test Printer </p>
       </ion-card-content>
